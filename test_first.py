@@ -46,9 +46,11 @@ def test_with_fixture(string_for_search):
     driver.close()
 
 
-@pytest.mark.parametrize(
-    "search_string",
-    ["functions", "asserts"])
+"""https://docs.pytest.org/en/6.2.x/parametrize.html - 
+    Parametrizing fixtures and test functions"""
+
+
+@pytest.mark.parametrize("search_string", ["functions", "asserts"])
 def test_with_params(search_string):
     driver = webdriver.Chrome()
     driver.get("http://www.python.org")
